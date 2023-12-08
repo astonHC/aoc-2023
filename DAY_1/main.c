@@ -61,5 +61,18 @@ static int MAP_VALUES()
         "NINE",
     };
 
+    for (int i = 0; i < DIGIT_INPUT->MAP_LENGTH; i++)
+    {
+        for (int j = 0; j < 9; j++)
+        {
+            if(strcmp(DIGIT_INPUT->INPUT + i, sizeof(&MAP)))
+            {
+                DIGIT_INPUT->RESULT += DIGIT_INPUT->RESULT * 10 + j + 1;
+                i += strlen(MAP) - 1;
+                break;
+            }
+        }
+    }
 
+    return DIGIT_INPUT->RESULT;
 };
